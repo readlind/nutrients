@@ -1,0 +1,31 @@
+.drink-count= Drink.count
+.new-drinks
+.container
+
+  #beer
+    %h2 Beer
+    %ul
+      - for beer in @drinks.beer
+        %li=beer.capitalized_name
+  #cocktail
+    %h2 Cocktail
+    %ul
+      - for cocktail in @drinks.cocktail
+        %li=cocktail.capitalized_name
+  #other
+    %h2 Other
+    %ul
+      - for other in @drinks.other
+        %li=other.capitalized_name
+  #whiskey
+    %h2 Whiskey
+    %ul
+      - for whiskey in @drinks.whiskey
+        %li
+          =whiskey.capitalized_name
+  #wine
+    %h2 Wine
+    %ul
+      - for wine in @drinks.wine
+        %li= wine.capitalized_name
+  = link_to "Reload", drinks_refresh_path, method: :post, id: "reload-link"
